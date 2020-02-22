@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				text-decoration: none;
+			}
+
+			ul {
+				text-align: center;
+				line-height: 50px;
+				display: flex;
+				background-color: #ccc;
+			}
+
+			ul li {
+				flex: 1;
+				position: relative;
+			}
+			
+			ul li:hover div{
+				display: block !important;
+			}
+			
+			a {
+				color: #000;
+			}
+			
+			ul li div a{
+				font-size: 14px;
+				color: #fff;
+			}
+			
+			a:hover {
+				color: #3eb1d7;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>
+					<a href="#/">网站首页</a>
+					
+				</li>
+				<li>
+					<a href="#/two">关于我们</a>
+					<div style="width: 50%;background-color: #1d3658;position: absolute;left: 50%;margin-left: -50px;top: 50px;display: none;">
+						<div><a href="#/two/one">企业理念</a></div>
+						<div><a href="#/two/two">愿景使命</a></div>
+						<div><a href="#/two/three">发展规划</a></div>
+					</div>
+				</li>
+				<li>
+					<a href="#/three">产品中心</a>
+					<div style="width: 50%;background-color: #1d3658;position: absolute;left: 50%;margin-left: -50px;top: 50px;display: none;">
+						<div><a href="#/three/one">外用药</a></div>
+						<div><a href="#/three/two">妇科用药</a></div>
+						<div><a href="#/three/three">小二用药</a></div>
+						<div><a href="#/three/four">感冒用药</a></div>
+						<div><a href="#/three/five">肠胃用药</a></div>
+					</div>
+				</li>
+				<li>
+					<a href="#/four">研发中心</a>
+					<div style="width: 50%;background-color: #1d3658;position: absolute;left: 50%;margin-left: -50px;top: 50px;display: none;">
+						<div><a href="#/four/one">研发团队</a></div>
+						<div><a href="#/four/two">技术力量</a></div>
+						<div><a href="#/four/three">研发展望</a></div>
+					</div>
+				</li>
+				<li>
+					<a href="#/five">特效药品</a>
+					<div style="width: 50%;background-color: #1d3658;position: absolute;left: 50%;margin-left: -50px;top: 50px;display: none;">
+						<div><a href="#/five/one">特效药原理</a></div>
+						<div><a href="#/five/two">特效药受众对象</a></div>
+						<div><a href="#/five/three">特效药常见问题</a></div>
+					</div>
+				</li>
+				<li><a href="#/six">资讯中心</a></li>
+				<li><a href="#/seven">联系我们</a></li>
+			</ul>
+			<div style="margin-top: 30px;text-align: center;line-height: 30px;">
+				<router-view></router-view>
+			</div>
+		</div>
+		<template id="one">
+			<div>
+				<div>首页</div>
+			</div>
+		</template>
+		<template id="two">
+			<div>
+				<div style="min-width: 400px;float: left;text-align: center;">
+					<div><a href="#/two/one">企业理念</a></div>
+					<div><a href="#/two/two">愿景使命</a></div>
+					<div><a href="#/two/three">发展规划</a></div>
+				</div>
+				<div style="float: left;padding-top: 20px;">
+					<router-view></router-view>
+				</div>
+			</div>
+		</template>
+		<template id="three">
+			<div>
+				<div style="min-width: 400px;float: left;text-align: center;">
+					<div><a href="#/three/one">外用药</a></div>
+					<div><a href="#/three/two">妇科用药</a></div>
+					<div><a href="#/three/three">小二用药</a></div>
+					<div><a href="#/three/four">感冒用药</a></div>
+					<div><a href="#/three/five">肠胃用药</a></div>
+				</div>
+				<div style="float: left;padding-top: 20px;">
+					<router-view></router-view>
+				</div>
+			</div>
+		</template>
+		<template id="four">
+			<div>
+				<div style="min-width: 400px;float: left;text-align: center;">
+					<div><a href="#/four/one">研发团队</a></div>
+					<div><a href="#/four/two">技术力量</a></div>
+					<div><a href="#/four/three">研发展望</a></div>
+				</div>
+				<div style="float: left;padding-top: 20px;">
+					<router-view></router-view>
+				</div>
+			</div>
+		</template>
+		<template id="five">
+			<div>
+				<div style="min-width: 400px;float: left;text-align: center;">
+					<div><a href="#/five/one">特效药原理</a></div>
+					<div><a href="#/five/two">特效药受众对象</a></div>
+					<div><a href="#/five/three">特效药常见问题</a></div>
+				</div>
+				<div style="float: left;padding-top: 20px;">
+					<router-view></router-view>
+				</div>
+			</div>
+		</template>
+		<template id="six">
+			<div>
+				<div>资讯中心</div>
+			</div>
+		</template>
+		<template id="seven">
+			<div>
+				<div>联系我们</div>
+			</div>
+		</template>
+
+	</body>
+	<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue-router.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var router = new VueRouter({
+			routes: [{
+					path: '/',
+					name: 'one',
+					component: {
+						template: '#one'
+					}
+				},
+				{
+					path: '/two',
+					name: 'two',
+					redirect:'/two/one',
+					component: {
+						template: '#two'
+					},
+					children: [{
+							path: 'one',
+							name: 'index2_one',
+							component: {
+								template: '<p>企业理念</p>'
+							}
+						},
+						{
+							path: 'two',
+							name: 'index2_two',
+							component: {
+								template: '<p>愿景使命</p>'
+							}
+						},
+						{
+							path: 'three',
+							name: 'index2_three',
+							component: {
+								template: '<p>发展规划</p>'
+							}
+						},
+					]
+				},
+				{
+					path: '/three',
+					name: 'three',
+					redirect:'/three/one',
+					component: {
+						template: '#three'
+					},
+					children: [{
+							path: 'one',
+							name: 'index2_one',
+							component: {
+								template: '<p>外用药</p>'
+							}
+						},
+						{
+							path: 'two',
+							name: 'index2_two',
+							component: {
+								template: '<p>妇科用药</p>'
+							}
+						},
+						{
+							path: 'three',
+							name: 'index2_three',
+							component: {
+								template: '<p>小二用药</p>'
+							}
+						},
+						{
+							path: 'four',
+							name: 'index2_three',
+							component: {
+								template: '<p>感冒用药</p>'
+							}
+						},
+						{
+							path: 'five',
+							name: 'index2_three',
+							component: {
+								template: '<p>肠胃用药</p>'
+							}
+						},
+					]
+				},
+				{
+					path: '/four',
+					name: 'four',
+					redirect:'/four/one',
+					component: {
+						template: '#four'
+					},
+					children: [{
+							path: 'one',
+							name: 'index2_one',
+							component: {
+								template: '<p>研发团队</p>'
+							}
+						},
+						{
+							path: 'two',
+							name: 'index2_two',
+							component: {
+								template: '<p>技术力量</p>'
+							}
+						},
+						{
+							path: 'three',
+							name: 'index2_three',
+							component: {
+								template: '<p>研发展望</p>'
+							}
+						},
+					]
+				},
+				{
+					path: '/five',
+					name: 'five',
+					redirect:'/five/one',
+					component: {
+						template: '#five'
+					},
+					children: [{
+							path: 'one',
+							name: 'index2_one',
+							component: {
+								template: '<p>特效药原理</p>'
+							}
+						},
+						{
+							path: 'two',
+							name: 'index2_two',
+							component: {
+								template: '<p>特效药受众对象</p>'
+							}
+						},
+						{
+							path: 'three',
+							name: 'index2_three',
+							component: {
+								template: '<p>特效药常见问题</p>'
+							}
+						},
+					]
+				},
+				{
+					path: '/six',
+					name: 'six',
+					component: {
+						template: '#six'
+					}
+				},
+				{
+					path: '/seven',
+					name: 'seven',
+					component: {
+						template: '#seven'
+					}
+				},
+			]
+		})
+		new Vue({
+			el: '#box',
+			router,
+		})
+	</script>
+</html>
